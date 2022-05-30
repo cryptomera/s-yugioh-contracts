@@ -19,7 +19,7 @@ pub mod yugioh {
         Ok(())
     }
 
-    pub create_nft(ctx: Context<Create>) -> Result<()> {
+    pub fn create_nft(ctx: Context<Create>) -> Result<()> {
         msg!("Initializing Mint NFT");
         let cpi_accounts = MintTo {
             mint: ctx.accounts.mint.to_account_info(),
@@ -117,7 +117,7 @@ pub mod yugioh {
         Ok(())
     }
 
-    pub mint_nft(
+    pub fn mint_nft(
         Context<MintNft>,
         token_id: String,
     ) -> Result<()> {
